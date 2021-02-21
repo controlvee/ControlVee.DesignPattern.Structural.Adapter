@@ -30,6 +30,9 @@ namespace ControlVee.DesignPattern.Structural.Adapter
         }
     }
 
+    /// <summary>
+    /// Target class.
+    /// </summary>
     class Compound
     {
         protected string _chemical;
@@ -54,7 +57,7 @@ namespace ControlVee.DesignPattern.Structural.Adapter
     /// </summary>
     class RichCompound : Compound
     {
-        private ChemicalDataBank _bank;
+        private ChemicalBank _bank;
         public RichCompound(string name) : base (name)
         {
 
@@ -63,7 +66,7 @@ namespace ControlVee.DesignPattern.Structural.Adapter
         public override void Display()
         {
             // Adaptee.
-            _bank = new ChemicalDataBank();
+            _bank = new ChemicalBank();
 
             _biolingPoint = _bank.GetCriticalPoint(_chemical, "B");
             _meltingPoint = _bank.GetCriticalPoint(_chemical, "M");
@@ -77,7 +80,7 @@ namespace ControlVee.DesignPattern.Structural.Adapter
     /// <summary>
     /// Adaptee.
     /// </summary>
-    class ChemicalDataBank
+    class ChemicalBank
     {
         // Databank "legacy API".
         public float GetCriticalPoint(string compound, string point)
