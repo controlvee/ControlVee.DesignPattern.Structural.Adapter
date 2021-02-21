@@ -6,7 +6,7 @@ namespace ControlVee.DesignPattern.Structural.Adapter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
